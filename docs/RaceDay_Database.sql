@@ -35,7 +35,8 @@ CREATE TABLE Users (
 );
 GO
 
-CREATE TABLE Events (
+
+    CREATE TABLE Events (
     EventID INT IDENTITY(1,1) PRIMARY KEY,
     OrganiserID INT NOT NULL,
     EventName NVARCHAR(200) NOT NULL,
