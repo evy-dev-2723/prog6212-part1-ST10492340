@@ -139,7 +139,8 @@ GO
 ('Kids Race', '1km race for children', 1.00);
 GO
 
-INSERT INTO Events (OrganiserID, EventName, Description, EventDate, Location, Venue, DistanceKm, IsActive)
+
+    INSERT INTO Events (OrganiserID, EventName, Description, EventDate, Location, Venue, DistanceKm, IsActive)
 VALUES
 (1, 'Comrades Marathon', '87km race', '2026-06-15 05:30:00', 'Pietermaritzburg', 'City Hall', 87.00, 1),
 (1, 'Durban City Run', '10km run in Durban', '2026-07-20 07:00:00', 'Durban', 'City Hall', 10.00, 1),
