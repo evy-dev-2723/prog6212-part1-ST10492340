@@ -95,7 +95,7 @@ I have recorded a video walkthrough explaining my planning decisions. In the vid
 - Run the SQL script live in SSMS
 - Show the GitHub Actions green build
 
-Watch the video here: [YouTube Link](https://youtu.be/your-video-link-here)
+Watch the video here: (https://youtu.be/_WgNiCh3dTw?si=GfDL0vpxwJEJfDs9)
 
 ## Commit History
 
