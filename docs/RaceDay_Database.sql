@@ -130,7 +130,7 @@ GO
 ('david@email.com', 'hash345', 'David', 'Wilson', '2000-01-20', 2);
 GO
 
-INSERT INTO Categories (CategoryName, Description, DefaultDistance) VALUES
+ INSERT INTO Categories (CategoryName, Description, DefaultDistance) VALUES
 ('5km Fun Run', 'Fun run for all ages', 5.00),
 ('10km Challenge', 'Challenging 10km race', 10.00),
 ('Half Marathon', '21.1km race', 21.10),
