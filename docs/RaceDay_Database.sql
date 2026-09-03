@@ -20,6 +20,7 @@ CREATE TABLE Roles (
     Description NVARCHAR(255) NULL
 );
 GO
+    
 
 CREATE TABLE Users (
     UserID INT IDENTITY(1,1) PRIMARY KEY,
