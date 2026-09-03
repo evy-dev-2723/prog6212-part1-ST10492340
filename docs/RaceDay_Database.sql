@@ -121,7 +121,8 @@ GO
 ('Participant', 'Event participant');
 GO
 
-INSERT INTO Users (Email, PasswordHash, FirstName, LastName, DateOfBirth, RoleID) VALUES
+
+    INSERT INTO Users (Email, PasswordHash, FirstName, LastName, DateOfBirth, RoleID) VALUES
 ('john@raceday.co.za', 'hash123', 'John', 'Smith', '1985-03-15', 1),
 ('sarah@raceday.co.za', 'hash456', 'Sarah', 'Johnson', '1990-07-22', 1),
 ('mike@email.com', 'hash789', 'Mike', 'Brown', '1995-11-10', 2),
