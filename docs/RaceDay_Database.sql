@@ -158,7 +158,8 @@ INSERT INTO EventCategories (EventID, CategoryID, EntryFee, MaxParticipants) VAL
 (3, 4, 750.00, 5000);
 GO
 
-INSERT INTO Enrolments (EventID, ParticipantID, EventCategoryID, Status, PaymentStatus, BibNumber)
+
+    INSERT INTO Enrolments (EventID, ParticipantID, EventCategoryID, Status, PaymentStatus, BibNumber)
 VALUES
 (1, 3, 2, 'Confirmed', 'Paid', 1001),
 (1, 4, 1, 'Confirmed', 'Paid', 1002),
