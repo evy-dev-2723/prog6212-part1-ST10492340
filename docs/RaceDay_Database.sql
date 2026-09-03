@@ -115,7 +115,8 @@ GO
 );
 GO
 
-INSERT INTO Roles (RoleName, Description) VALUES
+
+    INSERT INTO Roles (RoleName, Description) VALUES
 ('Organiser', 'Event organiser'),
 ('Participant', 'Event participant');
 GO
