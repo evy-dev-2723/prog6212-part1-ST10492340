@@ -20,6 +20,7 @@ CREATE TABLE Roles (
     Description NVARCHAR(255) NULL
 );
 GO
+    
 
 CREATE TABLE Users (
     UserID INT IDENTITY(1,1) PRIMARY KEY,
@@ -34,7 +35,8 @@ CREATE TABLE Users (
 );
 GO
 
-CREATE TABLE Events (
+
+    CREATE TABLE Events (
     EventID INT IDENTITY(1,1) PRIMARY KEY,
     OrganiserID INT NOT NULL,
     EventName NVARCHAR(200) NOT NULL,
@@ -57,7 +59,8 @@ CREATE TABLE Categories (
 );
 GO
 
-CREATE TABLE EventCategories (
+
+    CREATE TABLE EventCategories (
     EventCategoryID INT IDENTITY(1,1) PRIMARY KEY,
     EventID INT NOT NULL,
     CategoryID INT NOT NULL,
@@ -69,7 +72,8 @@ CREATE TABLE EventCategories (
 );
 GO
 
-CREATE TABLE Enrolments (
+
+    CREATE TABLE Enrolments (
     EnrolmentID INT IDENTITY(1,1) PRIMARY KEY,
     EventID INT NOT NULL,
     ParticipantID INT NOT NULL,
@@ -97,7 +101,8 @@ CREATE TABLE Results (
 );
 GO
 
-CREATE TABLE WeatherInfo (
+
+    CREATE TABLE WeatherInfo (
     WeatherID INT IDENTITY(1,1) PRIMARY KEY,
     EventID INT NOT NULL,
     ForecastDate DATE NOT NULL,
@@ -110,12 +115,14 @@ CREATE TABLE WeatherInfo (
 );
 GO
 
-INSERT INTO Roles (RoleName, Description) VALUES
+
+    INSERT INTO Roles (RoleName, Description) VALUES
 ('Organiser', 'Event organiser'),
 ('Participant', 'Event participant');
 GO
 
-INSERT INTO Users (Email, PasswordHash, FirstName, LastName, DateOfBirth, RoleID) VALUES
+
+    INSERT INTO Users (Email, PasswordHash, FirstName, LastName, DateOfBirth, RoleID) VALUES
 ('john@raceday.co.za', 'hash123', 'John', 'Smith', '1985-03-15', 1),
 ('sarah@raceday.co.za', 'hash456', 'Sarah', 'Johnson', '1990-07-22', 1),
 ('mike@email.com', 'hash789', 'Mike', 'Brown', '1995-11-10', 2),
@@ -123,7 +130,7 @@ INSERT INTO Users (Email, PasswordHash, FirstName, LastName, DateOfBirth, RoleID
 ('david@email.com', 'hash345', 'David', 'Wilson', '2000-01-20', 2);
 GO
 
-INSERT INTO Categories (CategoryName, Description, DefaultDistance) VALUES
+ INSERT INTO Categories (CategoryName, Description, DefaultDistance) VALUES
 ('5km Fun Run', 'Fun run for all ages', 5.00),
 ('10km Challenge', 'Challenging 10km race', 10.00),
 ('Half Marathon', '21.1km race', 21.10),
@@ -132,7 +139,8 @@ INSERT INTO Categories (CategoryName, Description, DefaultDistance) VALUES
 ('Kids Race', '1km race for children', 1.00);
 GO
 
-INSERT INTO Events (OrganiserID, EventName, Description, EventDate, Location, Venue, DistanceKm, IsActive)
+
+    INSERT INTO Events (OrganiserID, EventName, Description, EventDate, Location, Venue, DistanceKm, IsActive)
 VALUES
 (1, 'Comrades Marathon', '87km race', '2026-06-15 05:30:00', 'Pietermaritzburg', 'City Hall', 87.00, 1),
 (1, 'Durban City Run', '10km run in Durban', '2026-07-20 07:00:00', 'Durban', 'City Hall', 10.00, 1),
@@ -150,7 +158,8 @@ INSERT INTO EventCategories (EventID, CategoryID, EntryFee, MaxParticipants) VAL
 (3, 4, 750.00, 5000);
 GO
 
-INSERT INTO Enrolments (EventID, ParticipantID, EventCategoryID, Status, PaymentStatus, BibNumber)
+
+    INSERT INTO Enrolments (EventID, ParticipantID, EventCategoryID, Status, PaymentStatus, BibNumber)
 VALUES
 (1, 3, 2, 'Confirmed', 'Paid', 1001),
 (1, 4, 1, 'Confirmed', 'Paid', 1002),

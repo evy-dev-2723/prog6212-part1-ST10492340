@@ -1,0 +1,84 @@
+name: Part 1 Documentation Check
+
+on:
+  push:
+    branches: [ main, develop ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  validate-part1:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+
+    - name: Check docs folder exists
+      run: |
+        if [ ! -d "docs" ]; then
+          echo " Error: docs folder not found"
+          exit 1
+        fi
+        echo " docs folder exists"
+
+    - name: Check ERD file exists
+      run: |
+        if [ ! -f "docs/RaceDay_ERD.png" ]; then
+          echo " Error: RaceDay_ERD.png not found in docs folder"
+          exit 1
+        fi
+        echo " RaceDay_ERD.png exists"
+
+    - name: Check API Endpoint Plan exists
+      run: |
+        if [ ! -f "docs/RaceDay_API_Endpoint_Plan.pdf" ]; then
+          echo " Error: RaceDay_API_Endpoint_Plan.pdf not found in docs folder"
+          exit 1
+        fi
+        echo " RaceDay_API_Endpoint_Plan.pdf exists"
+
+    - name: Check SQL script exists
+      run: |
+        if [ ! -f "docs/RaceDay_Database.sql" ]; then
+          echo " Error: RaceDay_Database.sql not found in docs folder"
+          exit 1
+        fi
+        echo " RaceDay_Database.sql exists"
+
+    - name: Check README exists
+      run: |
+        if [ ! -f "README.md" ]; then
+          echo " Error: README.md not found in root"
+          exit 1
+        fi
+        echo " README.md exists"
+
+    - name: Validate SQL script content
+      run: |
+        if ! grep -q "CREATE TABLE" docs/RaceDay_Database.sql; then
+          echo " Error: SQL script does not contain CREATE TABLE statements"
+          exit 1
+        fi
+        if ! grep -q "INSERT INTO" docs/RaceDay_Database.sql; then
+          echo " Error: SQL script does not contain INSERT statements"
+          exit 1
+        fi
+        echo " SQL script contains CREATE TABLE and INSERT statements"
+
+    - name: Display docs folder contents
+      run: |
+        echo " Documentation folder contents:"
+        ls -la docs/
+
+    - name: Success
+      run: |
+        echo " All validation checks passed successfully!"
+        echo "┌──────────────────────────────────────────────────────────────┐"
+        echo "│  RaceDay Part 1 - Documentation Complete                │"
+        echo "│   docs/ folder:                                       │"
+        echo "│   ERD:                                               │"
+        echo "│   API Endpoints:                                     │"
+        echo "│   SQL Script:                                        │"
+        echo "│  README:                                           │"
+        echo "└──────────────────────────────────────────────────────────────┘"
