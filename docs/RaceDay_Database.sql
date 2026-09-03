@@ -101,7 +101,8 @@ CREATE TABLE Results (
 );
 GO
 
-CREATE TABLE WeatherInfo (
+
+    CREATE TABLE WeatherInfo (
     WeatherID INT IDENTITY(1,1) PRIMARY KEY,
     EventID INT NOT NULL,
     ForecastDate DATE NOT NULL,
