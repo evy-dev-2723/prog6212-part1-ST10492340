@@ -59,7 +59,8 @@ CREATE TABLE Categories (
 );
 GO
 
-CREATE TABLE EventCategories (
+
+    CREATE TABLE EventCategories (
     EventCategoryID INT IDENTITY(1,1) PRIMARY KEY,
     EventID INT NOT NULL,
     CategoryID INT NOT NULL,
