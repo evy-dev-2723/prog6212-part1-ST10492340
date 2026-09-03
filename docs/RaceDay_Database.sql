@@ -71,7 +71,8 @@ CREATE TABLE EventCategories (
 );
 GO
 
-CREATE TABLE Enrolments (
+
+    CREATE TABLE Enrolments (
     EnrolmentID INT IDENTITY(1,1) PRIMARY KEY,
     EventID INT NOT NULL,
     ParticipantID INT NOT NULL,
